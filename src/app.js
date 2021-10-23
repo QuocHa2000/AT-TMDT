@@ -10,8 +10,10 @@ var options = {
   autoIndex: true,
   useUnifiedTopology: true,
 };
-mongoose.connect(config.url, options);
 
+mongoose.connect(config.url, options, function (err) {
+  console.log(err);
+});
 const inforSchema = new mongoose.Schema({
   user_name: String,
   password: String,
