@@ -1,9 +1,8 @@
-require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const multer = require("multer");
-
+const config = require("./config.js");
 const app = express();
 
 var options = {
@@ -11,8 +10,7 @@ var options = {
   autoIndex: true,
   useUnifiedTopology: true,
 };
-console.log(process.env.DATABASE_URI);
-mongoose.connect(process.env.DATABASE_URI, options);
+mongoose.connect(config.url, options);
 
 const inforSchema = new mongoose.Schema({
   user_name: String,
@@ -67,4 +65,4 @@ app.get("/:id", async function (req, res, next) {
   res.json({ data });
 });
 
-app.listen("3000", () => console.log("App is on 3000"));
+app.listen(3000, () => console.log("App is on 3000"));
