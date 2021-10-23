@@ -14,7 +14,7 @@ module.exports = {
       ref: "origin/master",
       repo: REPO,
       ssh_options: "StrictHostKeyChecking=no",
-      path: "/root/home/ubuntu/mobile-server/",
+      path: "/root/home/azureserver/mobile-server/",
       "post-deploy":
         "npm install && npm run build && pm2 startOrRestart /home/ubuntu/mobile-server/ecosystem.config.js && pm2 save",
     },
