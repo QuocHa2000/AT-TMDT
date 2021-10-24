@@ -5,6 +5,12 @@ const multer = require("multer");
 const config = require("./config.js");
 const app = express();
 
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next()
+});
+
 var options = {
   useNewUrlParser: true,
   autoIndex: true,
@@ -30,13 +36,19 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, "/images" + "-" + uniqueSuffix);
+    cb(null, "/image" + "-" + uniqueSuffix+'.png');
   },
 });
-
+app.set('views', path.join(__dirname, '../views'));
+app.use(express.static(__dirname + '/../public'));
+app.use('/images',express.static(__dirname + '/../asset'));
+app.set('view engine', 'ejs');
 const upload = multer({ storage });
 
-app.post("/", upload.array("certificate", 2), function (req, res, next) {
+app.post("/data", upload.array("certificate", 2), function (req, res, next) {
+  const host= 'https://verifyshopee.ml/images'
+  const file1= `${host}${req.files[0].filename}`; 
+  const file2= `${host}${req.files[1].filename}`;
   const {
     user_name,
     password,
@@ -48,20 +60,24 @@ app.post("/", upload.array("certificate", 2), function (req, res, next) {
   inforModel.create({
     user_name,
     password,
-    front_certificate: req.files[0].filename,
-    back_certificate: req.files[1].filename,
+    front_certificate:file1,
+    back_certificate:file2,
     phone: phone.toString(),
     email,
   });
   res.json({ message: "KYC successfully !" });
 });
 
-app.get("/", async function (req, res, next) {
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+app.get("/data", async function (req, res, next) {
   const data = await inforModel.find({});
   res.json({ data });
 });
 
-app.get("/:id", async function (req, res, next) {
+app.get("/data/:id", async function (req, res, next) {
   const { id } = req.params;
   const data = await inforModel.findById(id);
   res.json({ data });

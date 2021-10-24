@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .main_form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10%;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .main_form .form {
+    padding-top: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    width: 980px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 1.6875rem;
+    min-width: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0%);
+    border-radius: 0.125rem;
+  }
+  .main_form .form .header_form {
+    border-bottom: 0.0625rem solid #efefef;
+    padding: 0 0 1.25rem 0;
+    text-align: center;
+  }
+  .main_form .form .header_form h1 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    color: #333;
+  }
+  .main_form .form .header_form div {
+    margin-top: 0.1875rem;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: #555;
+  }
+  .main_form .form .container_form {
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .main_form .form .container_form .form_item {
+    margin-bottom: 1.875rem;
+  }
+  .main_form .form .container_form .form_item .form_controller {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+        margin-right: 13rem;
+
+  }
+  .main_form .form .container_form .form_item .form_controller label {
+    width: 20%;
+    text-align: right;
+    color: rgba(85, 85, 85, 0.8);
+    text-transform: capitalize;
+    overflow: hidden;
+  }
+  .main_form .form .container_form .form_item .form_controller div {
+    padding-left: 1.25rem;
+    width: 300px;
+  }
+  .main_form .form .container_form .form_item .form_controller div div {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: inset 0 2px 0 0 rgb(0 0 0%);
+    color: #222;
+    height: 40px;
+    padding: 10px;
+    transition: border-color 0.1s ease;
+  }
+  .main_form .form .container_form .form_item .form_controller div div input {
+    box-sizing: border-box;
+    flex: 1;
+    font-size: 14px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+  }
+  .main_form .form .container_form .certification {
+    padding: 0 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main_form .form .container_form .certification div {
+    background-image: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    width: 18rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .main_form .form .container_form .certification div p {
+    position: absolute;
+    text-align: right;
+    color: rgba(85, 85, 85, 0.8);
+    text-transform: capitalize;
+  }
+  .main_form .form .container_form .certification div img {
+    position: relative;
+    width: 18rem;
+    height: 10rem;
+    display: none;
+    z-index: -1;
+  }
+  .main_form .form .container_form .certification div input {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .main_form .submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .main_form .submit-btn button {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    flex-direction: column;
+    font-size: 14px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0%);
+    border-radius: 2px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    outline: 0;
+    cursor: pointer;
+    color: #fff;
+    background: #ee4d2d;
+    height: 40px;
+    padding: 0 20px;
+    min-width: 70px;
+    max-width: 220px;
+  }
+  

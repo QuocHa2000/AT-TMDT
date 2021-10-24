@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist --copy-files",
-    "start": "node src/app.js"
+    "start": "src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.12",
-    "multer": "^1.4.3"
+    "multer": "^1.4.3",
+    "ejs": "~2.6.1"
   }
 }
